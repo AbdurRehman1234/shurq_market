@@ -1,0 +1,50 @@
+{% extends "helium10/base.html" %}
+
+{% block script %}
+  <!-- <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> -->
+{% endblock script %}
+
+{% block content %}
+  <div style="margin-top: 60px;">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col" style="text-align: center;">Scripts</th>
+          <th scope="col" style="text-align: center;">Charts</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for chart in charts %}
+          {% if chart.chart_img %}
+            <tr>
+              <td style="text-align: center;">{{chart.script.name}}</th>
+              <td style="text-align: center;">
+                <a class="btn btn-outline-secondary" href="{% url 'chart-detail' chart.id %}" role="button">
+                  View Chart
+                </a>
+              </td>
+            </tr>
+          {% endif %}
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <!-- <div>
+    <ul>
+        {% for chart in charts %}
+            {% if chart.chart_img %}
+                <li>{{chart.script.name}} --- <a href="{% url 'chart-detail' chart.id %}">View Chart</a></li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+  </div>
+{% endblock content %}
+<!-- plotly.html -->
+<html>
+  <head>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  </head>
+  <body style="height: 100vh; width: 100vw;">
+    
+  </body>
+</html>

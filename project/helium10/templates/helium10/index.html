@@ -1,0 +1,9 @@
+{% extends "helium10/base.html" %}
+{% block content %}
+  <form style="margin-top: 50px;" action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit">
+  </form>
+  <br>
+{% endblock content %}
